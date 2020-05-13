@@ -1,0 +1,51 @@
+basePath: /
+definitions:
+  model.CreateTokenResponse:
+    properties:
+      token:
+        type: string
+      success:
+        type: boolean
+    type: object
+info:
+  contact:
+    email: bilgi@caglartelef.com
+    name: Caglar Telef
+    url: http://www.caglartelef.com
+  description: This is Go Hello World Project
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Go Hello World Project
+  version: "1.0"
+paths:
+  /createToken:
+    get:
+      consumes:
+      - application/json
+      description: create token with username and password
+      parameters:
+      - description: username
+        in: query
+        name: username
+        type: string
+      - description: password
+        in: query
+        name: password
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.CreateTokenResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.CreateTokenResponse'
+      summary: create token
+      tags:
+      - Token
+swagger: "2.0"

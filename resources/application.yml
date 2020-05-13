@@ -1,0 +1,9 @@
+dev:
+  server:
+    serverMode: "debug"
+stage:
+  server:
+    serverMode: "debug"
+prod:
+  server:
+    serverMode: "release"
