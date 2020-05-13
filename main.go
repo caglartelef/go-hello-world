@@ -11,9 +11,9 @@ import (
 	"net/http"
 )
 
-// @title Go API Project
+// @title Go Project
 // @version 1.0
-// @description Go API Project
+// @description Go Project
 // @termsOfService http://swagger.io/terms/
 
 // @contact.name Caglar Telef
@@ -26,7 +26,7 @@ import (
 // @BasePath /
 //go:generate swag init
 func main() {
-	fmt.Println("Hello Go Api!")
+	fmt.Println("Go Hello World!")
 	router := gin.Default()
 	router.RouterGroup.Handlers = router.RouterGroup.Handlers[0:0]
 	router.Use(gin.Recovery())
