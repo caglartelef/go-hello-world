@@ -1,5 +1,6 @@
 package main
 
+// Go import library
 import (
 	"fmt"
 	_ "github.com/caglartelef/go-hello-world/docs"
@@ -26,7 +27,7 @@ import (
 // @BasePath /
 //go:generate swag init
 func main() {
-	fmt.Println("Go Hello World!")
+	fmt.Println("Hello World!")
 	router := gin.Default()
 	router.RouterGroup.Handlers = router.RouterGroup.Handlers[0:0]
 	router.Use(gin.Recovery())
@@ -34,8 +35,10 @@ func main() {
 	controllerArray := startup.Initialize()
 
 	for _, key := range *controllerArray {
+		// We register all controller and service
 		key.Register(router)
 	}
+	// This configurations for swagger.
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	router.GET("/healthcheck", func(context *gin.Context) {
 		context.Status(http.StatusOK)

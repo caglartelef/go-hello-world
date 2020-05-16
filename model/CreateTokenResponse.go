@@ -1,6 +1,9 @@
 package model
 
+// Create Token Response
 type CreateTokenResponse struct {
-	Success bool   `json:success`
-	Token   string `json:token`
+	// Success type is bool
+	Success bool `json:success`
+	// Token type is string
+	Token string `json:token`
 }

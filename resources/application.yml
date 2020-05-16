@@ -1,3 +1,4 @@
+# We can add config in this file. We can sets configs for each server mode.
 dev:
   server:
     serverMode: "debug"
